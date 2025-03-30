@@ -3,10 +3,15 @@
 
 class Shapes
 {
-	Shapes();
-	~Shapes();
-
 public:
-	sf::RenderWindow* window(sf::RenderWindow());
+	Shapes(unsigned int width, unsigned int height);
+	~Shapes();
+	void Run();
+
+private:
+	unsigned int width;
+	unsigned int height;
+	sf::RenderWindow* window;
+	sf::CircleShape circle;
 };
 
