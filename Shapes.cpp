@@ -5,11 +5,11 @@ Shapes::Shapes(unsigned int width, unsigned int height) : width(width), height(h
 	window = new sf::RenderWindow(sf::VideoMode({ width, height }), "RAYLIB AND SDL2 BETTER!!!");
 	window->setFramerateLimit(30);
 
-	circle.setRadius(64.f);
+	circle.setRadius(24.f);
 	circle.setOrigin(circle.getGeometricCenter());
 	circle.setPosition({ width / 2.f, height / 2.f });
 	circle.setFillColor(sf::Color::Green);
-	circle.setOutlineThickness(4.7f);
+	circle.setOutlineThickness(3.5f);
 	circle.setOutlineColor(sf::Color::Magenta);
 	circle.setPointCount(5);
 }

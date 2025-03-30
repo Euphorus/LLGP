@@ -136,10 +136,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Input.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Shapes.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Event.h" />
+    <ClInclude Include="Input.h" />
     <ClInclude Include="packages\SFML\include\SFML\Audio.hpp" />
     <ClInclude Include="packages\SFML\include\SFML\Audio\AudioResource.hpp" />
     <ClInclude Include="packages\SFML\include\SFML\Audio\Export.hpp" />
