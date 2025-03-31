@@ -4,15 +4,15 @@
 
 class Input
 {
-	Input();
-	~Input();
-	void HandleInput();
+	/*Input();
+	~Input();*/
 
 public:
 	LLGP::Event<sf::Keyboard::Key> moveUp;
 	LLGP::Event<sf::Keyboard::Key> moveDown;
 	LLGP::Event<sf::Keyboard::Key> moveLeft;
 	LLGP::Event<sf::Keyboard::Key> moveRight;
+	void HandleInput();
 
 private:
 	void BroadcastUp(sf::Keyboard::Key key);

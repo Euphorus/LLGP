@@ -1,5 +1,6 @@
 #pragma once
 #include<SFML/Graphics.hpp>
+#include "Input.h"
 
 class Shapes
 {
@@ -13,5 +14,9 @@ private:
 	unsigned int height;
 	sf::RenderWindow* window;
 	sf::CircleShape circle;
+	Input input;
+	float speed = 5.0f;
+
+	void MoveShape(sf::Keyboard::Key key);
 };
 

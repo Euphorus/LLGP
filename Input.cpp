@@ -1,19 +1,28 @@
 #include<iostream>
 #include "Input.h"
 
-Input::Input()
-{
-
-}
-
-Input::~Input()
-{
-
-}
 
 void Input::HandleInput()
 {
-	
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::W))
+	{
+		moveUp.Invoke(sf::Keyboard::Key::W);
+	}
+
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::S))
+	{
+		moveDown.Invoke(sf::Keyboard::Key::S);
+	}
+
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A))
+	{
+		moveLeft.Invoke(sf::Keyboard::Key::A);
+	}
+
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::D))
+	{
+		moveRight.Invoke(sf::Keyboard::Key::D);
+	}
 }
 
 void Input::BroadcastUp(sf::Keyboard::Key key)

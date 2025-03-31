@@ -12,6 +12,12 @@ Shapes::Shapes(unsigned int width, unsigned int height) : width(width), height(h
 	circle.setOutlineThickness(3.5f);
 	circle.setOutlineColor(sf::Color::Magenta);
 	circle.setPointCount(5);
+
+	//bind the MoveShape function to the Input events
+	input.moveUp.AddListener(this, [this](sf::Keyboard::Key key) {MoveShape(key); });
+	input.moveDown.AddListener(this, [this](sf::Keyboard::Key key) {MoveShape(key); });
+	input.moveLeft.AddListener(this, [this](sf::Keyboard::Key key) {MoveShape(key); });
+	input.moveRight.AddListener(this, [this](sf::Keyboard::Key key) {MoveShape(key); });
 }
 
 Shapes::~Shapes()
@@ -38,8 +44,31 @@ void Shapes::Run()
 			}
 		}
 
+		input.HandleInput();
+
 		window->clear();
 		window->draw(circle);
 		window->display();
+	}
+}
+
+void Shapes::MoveShape(sf::Keyboard::Key key)
+{
+	switch (key)
+	{
+	case sf::Keyboard::Key::W:
+		circle.move({0.f, -speed});
+		break;
+	case sf::Keyboard::Key::S:
+		circle.move({ 0.f, speed });
+		break;
+	case sf::Keyboard::Key::A:
+		circle.move({ -speed, 0.f });
+		break;
+	case sf::Keyboard::Key::D:
+		circle.move({ speed, 0.f });
+		break;
+	default:
+		break;
 	}
 }
