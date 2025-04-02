@@ -52,15 +52,19 @@ void Shapes::MoveShape(sf::Keyboard::Key key)
 	{
 	case sf::Keyboard::Key::W:
 		circle.move({0.f, -speed});
+		std::cout << "W is being pressed...\n";
 		break;
 	case sf::Keyboard::Key::S:
 		circle.move({ 0.f, speed });
+		std::cout << "S is being pressed...\n";
 		break;
 	case sf::Keyboard::Key::A:
 		circle.move({ -speed, 0.f });
+		std::cout << "A is being pressed...\n";
 		break;
 	case sf::Keyboard::Key::D:
 		circle.move({ speed, 0.f });
+		std::cout << "D is being pressed...\n";
 		break;
 	default:
 		break;

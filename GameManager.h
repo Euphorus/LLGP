@@ -9,6 +9,13 @@ public:
 
 	static std::vector<GameObject*>& GetGameObjectVector();
 
-	static 
+	//static 
+	static void getGameObjectNames(std::vector<GameObject*> GameObjectsVector);
+
+	static void clearGameObjectVector();
+
+private:
+	//Vector that stores all the created gameObjects
+	static std::vector<GameObject*> GameObjectsVector;
 };
 
