@@ -139,10 +139,12 @@
     <ClCompile Include="BoxCollider.cpp" />
     <ClCompile Include="ColliderComponent.cpp" />
     <ClCompile Include="Component.cpp" />
+    <ClCompile Include="EnemyComponent.cpp" />
     <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="PlayerComponent.cpp" />
     <ClCompile Include="ResourceManager.cpp" />
     <ClCompile Include="Shapes.cpp" />
     <ClCompile Include="UUID.cpp" />
@@ -152,6 +154,7 @@
     <ClInclude Include="BoxCollider.h" />
     <ClInclude Include="ColliderComponent.h" />
     <ClInclude Include="Component.h" />
+    <ClInclude Include="EnemyComponent.h" />
     <ClInclude Include="Event.h" />
     <ClInclude Include="GameManager.h" />
     <ClInclude Include="GameObject.h" />
@@ -259,6 +262,7 @@
     <ClInclude Include="packages\SFML\include\SFML\Window\WindowBase.hpp" />
     <ClInclude Include="packages\SFML\include\SFML\Window\WindowEnums.hpp" />
     <ClInclude Include="packages\SFML\include\SFML\Window\WindowHandle.hpp" />
+    <ClInclude Include="PlayerComponent.h" />
     <ClInclude Include="ResourceManager.h" />
     <ClInclude Include="Shapes.h" />
     <ClInclude Include="UUID.h" />

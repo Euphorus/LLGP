@@ -15,7 +15,11 @@ std::vector<GameObject*>& GameManager::GetGameObjectVector()
 
 void GameManager::getGameObjectNames(std::vector<GameObject*> GameObjectsVector)
 {
-
+	//loop to just output the names of all created gameObject
+	for (GameObject* gameObject : GameObjectsVector)
+	{
+		std::cout << "Stored GameObjects on the vector : " << gameObject->GetName() << std::endl;
+	}
 }
 
 void GameManager::clearGameObjectVector()
