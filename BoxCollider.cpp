@@ -27,21 +27,46 @@ bool BoxCollider::WallCollision(GameObject* objectOne, GameObject* objectTwo)
 {
 	sf::FloatRect playerBounds = objectOne->GetRectangleShape().getGlobalBounds();
 	sf::FloatRect wallBounds = objectTwo->GetRectangleShape().getGlobalBounds();
-	sf::FloatRect intersection;
+	
 
-	if (playerBounds.findIntersection({wallBounds, intersection}))
+	if (playerBounds.findIntersection(wallBounds))
 	{
-		float overlapX = intersection.size.x;
-		float overlapY = intersection.size.y;
+		float overlapX = wallBounds.size.x;
+		float overlapY = wallBounds.size.y;
 
-		//Determine the direction of player movement
 		LLGP::Vector2<float> moveDirection = objectOne->GetMoveDirection();
 
-		//Calculate
+		//Calculate displacemnt needed to move the player out of the wall
+		float displacementX = 0.0f;
+		float displacementY = 0.0f;
 
+		if (moveDirection.x > 0)
+		{
+			displacementX = overlapX;
+		}
+		else if (moveDirection.x < 0)
+		{
+			displacementX = -overlapX;
+		}
+
+		if (moveDirection.y > 0)
+		{
+			displacementY = overlapY;
+		}
+		else if (moveDirection.y < 0)
+		{
+			displacementY = -overlapY;
+		}
+
+		//Apply the displacement to move the player out of the wall
+		LLGP::Vector2<float> currentPosition = objectOne->GetLocation();
+		currentPosition.x -= displacementX;
+		currentPosition.y -= displacementY;
+		objectOne->SetLocation(currentPosition.x, currentPosition.y);
+		objectOne->GetRectangleShape().setPosition(objectOne->GetLocation());
+
+		return true;
 	}
-
-
 
 	return false;
 }
